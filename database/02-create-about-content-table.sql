@@ -1,0 +1,12 @@
+USE kookh_elseroo;
+
+CREATE TABLE IF NOT EXISTS about_content (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  locale VARCHAR(2) NOT NULL UNIQUE,
+  text VARCHAR(100) NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  description TEXT NOT NULL,
+  image VARCHAR(500) NOT NULL
+);
+
+DESCRIBE about_content;

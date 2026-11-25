@@ -1,0 +1,220 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model TestTable {
+  id   Int    @id @default(autoincrement())
+  name String @db.VarChar(100)
+
+  @@map("test_table")
+}
+
+model AboutKookh {
+  id           Int     @id @default(autoincrement())
+  locale       String  @unique @db.VarChar(2)
+  title        String  @db.VarChar(255)
+  text         String  @db.VarChar(100)
+  description  String  @db.Text
+  image        String  @db.VarChar(500)
+  videoYoutube String? @map("video_youtube") @db.VarChar(500)
+
+  @@map("about_kookh")
+}
+
+model HomePage {
+  id                  Int                @id @default(autoincrement())
+  locale              String             @unique @db.VarChar(2)
+  heroTitle           String             @map("hero_title") @db.VarChar(255)
+  heroSubtitle        String             @map("hero_subtitle") @db.VarChar(255)
+  heroDescription     String             @map("hero_description") @db.Text
+  heroImage           String             @map("hero_image") @db.VarChar(500)
+  aboutEyebrow        String             @map("about_eyebrow") @db.VarChar(150)
+  aboutTitle          String             @map("about_title") @db.VarChar(255)
+  aboutDescription    String             @map("about_description") @db.Text
+  aboutVideoUrl       String             @map("about_video_url") @db.VarChar(500)
+  amenitiesEyebrow    String             @map("amenities_eyebrow") @db.VarChar(150)
+  amenitiesTitle      String             @map("amenities_title") @db.VarChar(255)
+  galleryEyebrow      String             @map("gallery_eyebrow") @db.VarChar(150)
+  galleryTitle        String             @map("gallery_title") @db.VarChar(255)
+  testimonialsEyebrow String             @map("testimonials_eyebrow") @db.VarChar(150)
+  testimonialsTitle   String             @map("testimonials_title") @db.VarChar(255)
+  ctaTitle            String             @map("cta_title") @db.VarChar(255)
+  ctaDescription      String             @map("cta_description") @db.Text
+  ctaButtonLabel      String             @map("cta_button_label") @db.VarChar(150)
+  createdAt           DateTime           @default(now()) @map("created_at")
+  updatedAt           DateTime           @updatedAt @map("updated_at")
+  amenities           HomeAmenity[]
+  galleryImages       HomeGalleryImage[]
+  testimonials        HomeTestimonial[]
+
+  @@map("home_pages")
+}
+
+model HomeAmenity {
+  id          Int      @id @default(autoincrement())
+  homePageId  Int      @map("home_page_id")
+  iconKey     String   @map("icon_key") @db.VarChar(50)
+  name        String   @db.VarChar(150)
+  description String   @db.VarChar(255)
+  sortOrder   Int      @default(0) @map("sort_order")
+  isActive    Boolean  @default(true) @map("is_active")
+  homePage    HomePage @relation(fields: [homePageId], references: [id], onDelete: Cascade)
+
+  @@index([homePageId, sortOrder])
+  @@map("home_amenities")
+}
+
+model HomeGalleryImage {
+  id         Int      @id @default(autoincrement())
+  homePageId Int      @map("home_page_id")
+  imageUrl   String   @map("image_url") @db.VarChar(500)
+  alt        String   @db.VarChar(255)
+  sortOrder  Int      @default(0) @map("sort_order")
+  isActive   Boolean  @default(true) @map("is_active")
+  homePage   HomePage @relation(fields: [homePageId], references: [id], onDelete: Cascade)
+
+  @@index([homePageId, sortOrder])
+  @@map("home_gallery_images")
+}
+
+model HomeTestimonial {
+  id         Int      @id @default(autoincrement())
+  homePageId Int      @map("home_page_id")
+  name       String   @db.VarChar(150)
+  text       String   @db.Text
+  rating     Int      @default(5)
+  sortOrder  Int      @default(0) @map("sort_order")
+  isActive   Boolean  @default(true) @map("is_active")
+  homePage   HomePage @relation(fields: [homePageId], references: [id], onDelete: Cascade)
+
+  @@index([homePageId, sortOrder])
+  @@map("home_testimonials")
+}
+
+model AboutPageContent {
+  id              Int      @id @default(autoincrement())
+  locale          String   @unique @db.VarChar(2)
+  heroTitle       String   @map("hero_title") @db.VarChar(255)
+  heroImage       String   @map("hero_image") @db.VarChar(500)
+  storyEyebrow    String   @map("story_eyebrow") @db.VarChar(150)
+  storyTitle      String   @map("story_title") @db.VarChar(255)
+  storyFirst      String   @map("story_first") @db.Text
+  storySecond     String   @map("story_second") @db.Text
+  storyImage      String   @map("story_image") @db.VarChar(500)
+  storyImageAlt   String   @map("story_image_alt") @db.VarChar(255)
+  valuesTitle     String   @map("values_title") @db.VarChar(255)
+  values          Json
+  facilitiesTitle String   @map("facilities_title") @db.VarChar(255)
+  facilities      Json
+  policiesTitle   String   @map("policies_title") @db.VarChar(255)
+  policies        Json
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  @@map("about_page_contents")
+}
+
+model FaqPageContent {
+  id        Int      @id @default(autoincrement())
+  locale    String   @unique @db.VarChar(2)
+  title     String   @db.VarChar(255)
+  heroImage String   @map("hero_image") @db.VarChar(500)
+  groups    Json
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("faq_page_contents")
+}
+
+model ContactPageContent {
+  id                  Int      @id @default(autoincrement())
+  locale              String   @unique @db.VarChar(2)
+  title               String   @db.VarChar(255)
+  heroImage           String   @map("hero_image") @db.VarChar(500)
+  formTitle           String   @map("form_title") @db.VarChar(255)
+  formLabels          Json     @map("form_labels")
+  contactSectionTitle String   @map("contact_section_title") @db.VarChar(255)
+  mapTitle            String   @map("map_title") @db.VarChar(255)
+  createdAt           DateTime @default(now()) @map("created_at")
+  updatedAt           DateTime @updatedAt @map("updated_at")
+
+  @@map("contact_page_contents")
+}
+
+model SiteSettings {
+  id           Int      @id @default(autoincrement())
+  locale       String   @unique @db.VarChar(2)
+  siteName     String   @map("site_name") @db.VarChar(150)
+  headerLogo   String   @map("header_logo") @db.VarChar(500)
+  footerLogo   String   @map("footer_logo") @db.VarChar(500)
+  phone        String   @db.VarChar(50)
+  email        String   @db.VarChar(255)
+  fax          String   @db.VarChar(50)
+  address      String   @db.VarChar(500)
+  mapEmbedUrl  String   @map("map_embed_url") @db.Text
+  instagramUrl String   @map("instagram_url") @db.VarChar(500)
+  facebookUrl  String   @map("facebook_url") @db.VarChar(500)
+  xUrl         String   @map("x_url") @db.VarChar(500)
+  whatsappUrl  String   @map("whatsapp_url") @db.VarChar(500)
+  footerCredit String   @map("footer_credit") @db.VarChar(255)
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@map("site_settings")
+}
+
+model Customer {
+  id           Int       @id @default(autoincrement())
+  fullName     String    @map("full_name") @db.VarChar(150)
+  email        String    @unique @db.VarChar(255)
+  phone        String    @db.VarChar(50)
+  passwordHash String    @map("password_hash") @db.VarChar(255)
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @updatedAt @map("updated_at")
+  sessions     Session[]
+  bookings     Booking[]
+
+  @@map("customers")
+}
+
+model Booking {
+  id            Int      @id @default(autoincrement())
+  customerId    Int      @map("customer_id")
+  checkIn       DateTime @map("check_in") @db.Date
+  checkOut      DateTime @map("check_out") @db.Date
+  guests        Int
+  nights        Int
+  pricePerNight Int      @default(100) @map("price_per_night")
+  totalPrice    Int      @map("total_price")
+  status        String   @default("PENDING_PAYMENT") @db.VarChar(30)
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+  customer      Customer @relation(fields: [customerId], references: [id], onDelete: Restrict)
+
+  @@index([checkIn, checkOut])
+  @@index([customerId])
+  @@map("bookings")
+}
+
+model Session {
+  id        Int      @id @default(autoincrement())
+  tokenHash String   @unique @map("token_hash") @db.Char(64)
+  customerId Int     @map("customer_id")
+  expiresAt DateTime @map("expires_at")
+  createdAt DateTime @default(now()) @map("created_at")
+  customer  Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  @@index([customerId])
+  @@index([expiresAt])
+  @@map("sessions")
+}

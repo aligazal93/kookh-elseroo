@@ -39,3 +39,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/src/generated/prisma
+
+# locally uploaded media (keep the directory, not user files)
+/public/uploads/*
+!/public/uploads/.gitkeep
+
+# local agent/tooling state and generated artifacts
+/.agents/
+/.claude/
+/.windsurf/
+/output/
+/tmp/
+/skills-lock.json

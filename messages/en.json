@@ -1,0 +1,189 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "about": "About",
+    "faq": "FAQ",
+    "contact": "Contact us",
+    "login": "Login",
+    "logout": "Sign out",
+    "bookNow": "Book now",
+    "language": "AR"
+  },
+  "Hero": {
+    "title": "Escape the noise of the city",
+    "subtitle": "And enjoy a peaceful stay at Kookh Al Soroor",
+    "description": "A fully equipped cabin with a breathtaking view surrounded by nature, where tranquility, privacy and modern design meet.",
+    "arrivalDate": "Arrival date",
+    "departureDate": "Departure date",
+    "guests": "Guests",
+    "checkAvailability": "View and book",
+    "nightPrice": "SAR 100 / night",
+    "priceSummary": "{nights} nights — SAR {total}",
+    "bookingPending": "Booking...",
+    "bookingSuccess": "Your booking is confirmed for SAR {total}. Please contact the manager to send your payment screenshot.",
+    "alreadyBooked": "These dates have already been booked.",
+    "loginRequired": "Please sign in first to complete your booking.",
+    "invalidDates": "Please choose valid arrival and departure dates.",
+    "bookingError": "We couldn't complete your booking. Please try again.",
+    "closeToast": "Close message"
+  },
+  "Amenities": {
+    "eyebrow": "Amenities & services",
+    "title": "Everything you need for a perfect stay"
+  },
+  "About": {
+    "eyebrow": "About Kookh Al Soroor",
+    "title": "Your peaceful escape among the trees",
+    "description": "Kookh Al Soroor is located in the heart of beautiful nature, surrounded by cypress trees and breathtaking mountain views. The cabin offers a luxurious stay that combines the charm of nature with modern comfort.",
+    "videoTitle": "An introduction to Kookh Al Soroor"
+  },
+  "Gallery": {
+    "eyebrow": "Cabin gallery",
+    "title": "Discover the beauty of the place",
+    "openImage": "Open image: {image}",
+    "dialogLabel": "Photo gallery",
+    "closeImage": "Close image",
+    "images": {
+      "indoor": "Indoor seating area in the cabin",
+      "outdoor": "Outdoor seating surrounded by nature",
+      "mountains": "The cabin among the mountains",
+      "sunset": "The cabin exterior at sunset",
+      "furniture": "Furniture details inside the cabin"
+    }
+  },
+  "Testimonials": {
+    "eyebrow": "Guest reviews",
+    "title": "What our guests say",
+    "ratingLabel": "{rating} out of 5 stars",
+    "items": {
+      "first": {
+        "name": "Ahmed Alotaibi",
+        "text": "A wonderful experience! The place was very clean and peaceful, and the surrounding nature was incredibly beautiful."
+      },
+      "second": {
+        "name": "Mohammed Alsalem",
+        "text": "The place exceeded our expectations. It is perfect for relaxing and enjoying quality time away from the noise of the city."
+      }
+    }
+  },
+  "AboutPage": {
+    "heroTitle": "About Kookh Al Soroor",
+    "story": {
+      "eyebrow": "About Kookh Al Soroor",
+      "title": "Your peaceful escape among the trees",
+      "first": "Kookh Al Soroor began with a simple dream: to create a peaceful retreat in nature that brings luxury and simplicity together. In 2023, we began building the cabin in the heart of Wadi Al Soroor, surrounded by old trees and towering mountains.",
+      "second": "Every detail was thoughtfully designed to give our guests an exceptional experience, from handcrafted wooden furniture to large windows overlooking beautiful natural scenery.",
+      "imageAlt": "Kookh Al Soroor surrounded by nature"
+    },
+    "values": {
+      "title": "Our vision and values",
+      "nature": { "title": "Eco-friendly", "description": "We are committed to sustainability in every detail, from building materials to energy sources." },
+      "experience": { "title": "A unique experience", "description": "Every guest enjoys a personal and unforgettable stay surrounded by beautiful scenery." },
+      "location": { "title": "In the heart of nature", "description": "A perfect location away from the city, surrounded by cypress trees and mountains." }
+    },
+    "facilities": {
+      "title": "Amenities and services",
+      "wifi": { "title": "Free Wi-Fi", "description": "Fast internet connection" },
+      "fireplace": { "title": "Fireplace", "description": "A warm winter atmosphere" },
+      "view": { "title": "Scenic view", "description": "Breathtaking mountain views" },
+      "kitchen": { "title": "Equipped kitchen", "description": "Everything you need for cooking" },
+      "parking": { "title": "Private parking", "description": "Free private parking" },
+      "ac": { "title": "Air conditioning", "description": "Full temperature control" }
+    },
+    "policies": {
+      "title": "Stay policies",
+      "cancellation": { "title": "Cancellation policy", "description": "Cancel free of charge up to 48 hours before arrival. After that, one night will be charged." },
+      "times": { "title": "Check-in and check-out", "description": "Check-in starts at 3:00 PM and check-out is before 12:00 PM." },
+      "pets": { "title": "Pets", "description": "Pets are not allowed inside the cabin." },
+      "smoking": { "title": "Smoking", "description": "Smoking is not allowed inside the cabin. It is permitted only on the outdoor terrace." },
+      "children": { "title": "Children", "description": "Children are welcome. An extra bed is available upon request." }
+    }
+  },
+  "FaqPage": {
+    "title": "Frequently asked questions",
+    "booking": {
+      "title": "Booking",
+      "cancellation": { "question": "What is the cancellation policy?", "answer": "Cancel free of charge up to 48 hours before arrival. After that, one night will be charged." },
+      "times": { "question": "What are the check-in and check-out times?", "answer": "Check-in starts at 3:00 PM and check-out is before 12:00 PM." },
+      "pets": { "question": "Are pets allowed?", "answer": "Pets are not allowed inside the cabin." },
+      "smoking": { "question": "Is smoking allowed?", "answer": "Smoking is not allowed inside the cabin. It is permitted only on the outdoor terrace." },
+      "children": { "question": "Is the cabin suitable for children?", "answer": "Children are welcome, and an extra bed is available upon request." }
+    },
+    "payment": {
+      "title": "Payment",
+      "methods": { "question": "Which payment methods are available?", "answer": "We accept credit cards, Apple Pay and STC Pay, in addition to payment upon arrival." },
+      "secure": { "question": "Is payment secure?", "answer": "Yes. All payments are processed through secure and encrypted payment gateways." },
+      "refund": { "question": "What is the refund policy?", "answer": "Refunds are issued according to the cancellation policy and the payment method used." },
+      "chargeTime": { "question": "When will I be charged?", "answer": "The payment date and amount are shown clearly before you confirm the booking." }
+    }
+  },
+  "ContactPage": {
+    "title": "Contact us",
+    "info": {
+      "title": "Get in touch",
+      "phone": "Phone number",
+      "email": "Email address",
+      "fax": "Fax",
+      "location": "Location",
+      "address": "Wadi Al Soroor, Mountain Region"
+    },
+    "form": {
+      "title": "We are happy to answer your questions",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "phone": "Phone number",
+      "email": "Email address",
+      "message": "How can we help?",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastNamePlaceholder": "Enter your last name",
+      "emailPlaceholder": "Enter your email address",
+      "messagePlaceholder": "Write your message here",
+      "submit": "Send"
+    },
+    "map": {
+      "title": "Kookh Al Soroor location on the map"
+    }
+  },
+  "Auth": {
+    "login": {
+      "title": "Sign in",
+      "subtitle": "Enter your details to access your account",
+      "fullName": "Full name",
+      "fullNamePlaceholder": "Enter your full name",
+      "email": "Email address",
+      "emailPlaceholder": "Enter your email address",
+      "phone": "Phone number",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "forgotPassword": "Forgot your password?",
+      "submit": "Sign in",
+      "submitting": "Signing in...",
+      "invalidCredentials": "The email address or password is incorrect.",
+      "emailExists": "This email address is already registered.",
+      "error": "We couldn't complete the request. Please try again.",
+      "switchText": "Don't have an account?",
+      "switchLink": "Create a new account",
+      "backHome": "Back to home"
+    },
+    "register": {
+      "title": "Create an account",
+      "subtitle": "Join us and book your special experience",
+      "fullName": "Full name",
+      "fullNamePlaceholder": "Enter your full name",
+      "email": "Email address",
+      "emailPlaceholder": "Enter your email address",
+      "phone": "Phone number",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "forgotPassword": "Forgot your password?",
+      "submit": "Create account",
+      "submitting": "Creating account...",
+      "invalidCredentials": "The email address or password is incorrect.",
+      "emailExists": "This email address is already registered.",
+      "error": "We couldn't complete the request. Check your details and try again.",
+      "switchText": "Already have an account?",
+      "switchLink": "Sign in",
+      "backHome": "Back to home"
+    }
+  }
+}
